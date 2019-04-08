@@ -1,24 +1,26 @@
 package kz.canteen.domain.entity;
 
 import lombok.*;
+
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "user")
 @Data
-@NoArgsConstructor
-public class User {
+@Builder
+public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long userId;
 
-    @Column(name = "column",nullable = false,length = 64)
+    @Column(name = "column", nullable = false, length = 64)
     private String email;
 
-    @Column(name = "login",nullable = false,length = 32)
+    @Column(name = "login", nullable = false, length = 32)
     private String login;
 
-    @Column(name = "password",nullable = false,length = 128)
+    @Column(name = "password", nullable = false, length = 128)
     private String password;
 
     @Column(name = "phone_number")
