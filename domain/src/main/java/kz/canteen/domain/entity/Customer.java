@@ -1,5 +1,6 @@
 package kz.canteen.domain.entity;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,8 +16,7 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "customer")
-@Getter
-@Setter
+@Data
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

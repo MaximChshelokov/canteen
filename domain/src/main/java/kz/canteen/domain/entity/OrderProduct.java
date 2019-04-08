@@ -1,5 +1,6 @@
 package kz.canteen.domain.entity;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,8 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "order_product")
-@Getter
-@Setter
+@Data
 public class OrderProduct {
     @Id
     private long id;
