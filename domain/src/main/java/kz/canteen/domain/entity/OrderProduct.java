@@ -1,18 +1,14 @@
 package kz.canteen.domain.entity;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "order_product")
-@Getter
-@Setter
+@Data
 public class OrderProduct {
     @Id
     private long id;
