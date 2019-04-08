@@ -1,26 +1,27 @@
 package kz.canteen.domain.entity;
 
 import lombok.Data;
-
 import javax.persistence.*;
-import javax.validation.constraints.Size;
+import java.sql.Blob;
 
 @Entity
 @Table(name = "product")
 @Data
 public class Product {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long id;
-    @Column(name = "name")
-    @Size(max = 128)
+
+    @Column(name = "name",nullable = false,length = 128)
     private String name;
-    @Column(name = "description")
-    @Size(max = 256)
+
+    @Column(name = "description",nullable = false,length = 256)
     private String description;
-    @Column(name = "details")
-    @Size(max = 1024)
+
+    @Column(name = "details",nullable = false,length = 1024)
     private String details;
+
+    @Lob
     @Column(name = "image")
-    private byte[] image;
+    private Blob image;
 }

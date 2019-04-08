@@ -3,8 +3,7 @@ package kz.canteen.domain.entity;
 import lombok.Data;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+
 
 @Entity
 @Table(name = "order_status")
@@ -12,10 +11,9 @@ import javax.validation.constraints.Size;
 public class OrderStatus {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
-    @Column(name = "name")
-    @Size(max = 16)
-    @NotNull
+
+    @Column(name = "name",nullable = false,length = 16)
     private String name;
 }
