@@ -1,7 +1,6 @@
 package kz.canteen.domain.entity;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -15,7 +14,8 @@ import java.io.Serializable;
 public class OrderStatus implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "order_status_id_seq")
+    @SequenceGenerator(name = "order_status_id_seq", sequenceName = "order_status_id_seq", allocationSize = 1)
     private int id;
 
     @Column(name = "name", nullable = false, length = 16)

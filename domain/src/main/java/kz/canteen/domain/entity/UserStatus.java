@@ -2,10 +2,8 @@ package kz.canteen.domain.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import javax.validation.constraints.Size;
 
 
 @Entity
@@ -14,7 +12,8 @@ import javax.validation.constraints.Size;
 @AllArgsConstructor
 public class UserStatus {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_status_id_seq")
+    @SequenceGenerator(name = "user_status_id_seq", sequenceName = "user_status_id_seq", allocationSize = 1)
     private int id;
 
     @Column(name = "name", nullable = false, length = 10)

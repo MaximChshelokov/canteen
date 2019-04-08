@@ -8,7 +8,7 @@ public interface Dao<T extends Serializable> {
 
     T update(final T entity);
 
-    T delete(final T entity);
+    void delete(final T entity);
 
     T findOneById(final long id);
 
