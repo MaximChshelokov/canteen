@@ -8,6 +8,7 @@ import javax.persistence.PersistenceContext;
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
+import java.util.Optional;
 
 public abstract class BaseDao<T extends Serializable> implements Dao<T> {
     private final Class<T> entityClass;
@@ -45,9 +46,9 @@ public abstract class BaseDao<T extends Serializable> implements Dao<T> {
     }
 
     @Override
-    public T findOneById(final long id) {
+    public Optional<T> findOneById(final long id) {
         EntityManager manager = factory.createEntityManager();
-        return manager.find(entityClass, id);
+        return Optional.ofNullable(manager.find(entityClass, id));
     }
 
     @Override
