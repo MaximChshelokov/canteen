@@ -17,7 +17,7 @@
     </modules>
 
     <properties>
-        <project-madules.version>0.1</project-madules.version>
+        <project-modules.version>0.1</project-modules.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -38,22 +38,22 @@
             <dependency>
                 <groupId>kz.canteen</groupId>
                 <artifactId>domain</artifactId>
-                <version>${project-madules.version}</version>
+                <version>${project-modules.version}</version>
             </dependency>
             <dependency>
                 <groupId>kz.canteen</groupId>
                 <artifactId>dao</artifactId>
-                <version>${project-madules.version}</version>
+                <version>${project-modules.version}</version>
             </dependency>
             <dependency>
                 <groupId>kz.canteen</groupId>
                 <artifactId>service</artifactId>
-                <version>${project-madules.version}</version>
+                <version>${project-modules.version}</version>
             </dependency>
             <dependency>
                 <groupId>kz.canteen</groupId>
                 <artifactId>web</artifactId>
-                <version>${project-madules.version}</version>
+                <version>${project-modules.version}</version>
             </dependency>
 
             <!--External dependencies-->

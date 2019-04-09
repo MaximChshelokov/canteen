@@ -28,4 +28,8 @@ public class Customer implements Serializable {
 
     @Column(name = "email", nullable = false, length = 64)
     private String email;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "customer_status")
+    private UserStatus customerStatus;
 }

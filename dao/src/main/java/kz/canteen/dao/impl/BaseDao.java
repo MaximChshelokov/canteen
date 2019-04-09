@@ -17,6 +17,7 @@ public abstract class BaseDao<T extends Serializable> implements Dao<T> {
     @PersistenceContext
     private EntityManagerFactory factory;
 
+    @SuppressWarnings("unchecked")
     public BaseDao() {
         entityClass = (Class<T>) ((ParameterizedType) getClass()
                 .getGenericSuperclass()).getActualTypeArguments()[0];

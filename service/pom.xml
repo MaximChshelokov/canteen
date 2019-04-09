@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>service</artifactId>
-    <version>${project-madules.version}</version>
+    <version>${project-modules.version}</version>
 
     <dependencies>
         <dependency>

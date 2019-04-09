@@ -32,5 +32,6 @@ public class User implements Serializable {
     private UserRole role;
 
     @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "status_id")
     private UserStatus status;
 }
