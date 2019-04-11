@@ -1,7 +1,9 @@
 package kz.canteen.domain.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -13,6 +15,8 @@ import java.util.List;
 @Table(name = "order")
 @Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Order implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "order_id_seq")
@@ -28,12 +32,12 @@ public class Order implements Serializable {
     @Column(name = "total_price", nullable = false)
     private BigDecimal totalPrice;
 
-    @Column(name = "customer", nullable = false)
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "customer")
     private Customer customer;
 
-    @Column(name = "order_status", nullable = false)
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "order_status")
     private OrderStatus orderStatus;
 
     @ManyToMany(fetch = FetchType.EAGER,

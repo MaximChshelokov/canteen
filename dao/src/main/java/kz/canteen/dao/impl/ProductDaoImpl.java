@@ -3,8 +3,8 @@ package kz.canteen.dao.impl;
 import kz.canteen.dao.ProductDao;
 import kz.canteen.domain.entity.Product;
 
-import javax.ejb.Singleton;
+import javax.ejb.Stateless;
 
-@Singleton
+@Stateless
 public class ProductDaoImpl extends BaseDao<Product> implements ProductDao {
 }

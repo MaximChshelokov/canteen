@@ -9,6 +9,8 @@ import java.io.Serializable;
 @Table(name = "user")
 @Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_id_seq")

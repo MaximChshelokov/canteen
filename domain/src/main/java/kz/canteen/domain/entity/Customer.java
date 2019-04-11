@@ -1,7 +1,9 @@
 package kz.canteen.domain.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -11,6 +13,8 @@ import java.time.LocalDate;
 @Table(name = "customer")
 @Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Customer implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "customer_id_seq")

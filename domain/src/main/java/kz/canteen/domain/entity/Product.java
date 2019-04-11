@@ -1,16 +1,19 @@
 package kz.canteen.domain.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.sql.Blob;
 
 @Entity
 @Table(name = "product")
 @Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Product implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "product_id_seq")
@@ -26,7 +29,7 @@ public class Product implements Serializable {
     @Column(name = "details", nullable = false, length = 1024)
     private String details;
 
-    @Lob
+//    @Lob
     @Column(name = "image")
-    private Blob image;
+    private byte[] image;
 }

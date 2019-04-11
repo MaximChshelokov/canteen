@@ -2,6 +2,7 @@ package kz.canteen.domain.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
@@ -9,6 +10,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "user_status")
 @Data
+@NoArgsConstructor
 @AllArgsConstructor
 public class UserStatus {
     @Id
